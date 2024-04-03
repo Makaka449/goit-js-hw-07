@@ -1,29 +1,24 @@
-class Storage {
-  #items;
+const images = [
+  {
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg",
+    alt: "Group of Horses Running",
+  },
+];
 
-  constructor(items) {
-    this.#items = items;
-  }
-
-  getItems() {
-    return this.#items;
-  }
-
-  addItem(newItem) {
-    this.#items.push(newItem);
-  }
-
-  removeItem(itemToRemove) {
-    const index = this.#items.indexOf(itemToRemove);
-    if (index !== -1) {
-      this.#items.splice(index, 1);
-    }
-  }
-}
-
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector('.gallery'); 
+  images.forEach(image => {
+    const galleryLi = document.createElement('li');
+    const htmlImg = `<img src='${image.url}' alt='${image.alt}'>`;
+    galleryLi.innerHTML = htmlImg;
+    gallery.appendChild(galleryLi);
+  });
+});
