@@ -1,10 +1,13 @@
 const btn = document.querySelector(".change-color");
+const colorSpan = document.querySelector(".color"); 
 
-btn.addEventListener("click", handelClick);
+btn.addEventListener("click", handleButtonClick);
 
-function handelClick() {
+function handleButtonClick() {
     const colorRgb = getRandomHexColor();
-    document.body.style.backgroundColor = colorRgb;
+    document.body.style.backgroundColor = colorRgb; 
+    document.body.style.color = "white"; 
+    colorSpan.textContent = colorRgb; 
 }
 
 function getRandomHexColor() {
