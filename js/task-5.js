@@ -4,7 +4,7 @@ btn.addEventListener("click", handelClick);
 
 function handelClick() {
     const colorRgb = getRandomHexColor();
-    document.body.style.color = colorRgb;
+    document.body.style.backgroundColor = colorRgb;
 }
 
 function getRandomHexColor() {

@@ -15,10 +15,14 @@ const images = [
 
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector('.gallery'); 
+  const fragment = document.createDocumentFragment(); 
+
   images.forEach(image => {
     const galleryLi = document.createElement('li');
     const htmlImg = `<img src='${image.url}' alt='${image.alt}'>`;
     galleryLi.innerHTML = htmlImg;
-    gallery.appendChild(galleryLi);
+    fragment.appendChild(galleryLi);
   });
+
+  gallery.appendChild(fragment);
 });
